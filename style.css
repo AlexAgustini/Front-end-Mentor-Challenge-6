@@ -1,0 +1,198 @@
+    /* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+picture, img {
+    max-width:100%;
+    display:inline-block
+}
+
+/* COLORS AND FONTS */
+
+:root {
+    --brightorange:hsl(31, 77%, 52%);
+    --darkcyan:hsl(184, 100%, 22%);
+    --verydarkcyan:hsl(179, 100%, 13%);
+    --paragraphwhite:hsla(0, 0%, 100%, 0.75);
+    --hdns-btns-bg-gray:  hsl(0, 0%, 95%);
+
+    --ff-lexenddeca:'Lexend Deca', sans-serif;
+    --ff-bigshoulders:'Big Shoulders Display', sans-serif;
+}
+
+html {
+    font-size:15px
+}
+
+/* NORMAL CSS */
+
+main {
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: center;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width:85vw;
+    margin:4em auto;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.grid-item1 {
+    background-color: var(--brightorange);
+}
+
+.grid-item2 {
+    background-color: var(--darkcyan);
+}
+
+.grid-item3 {
+    background-color: var(--verydarkcyan);
+}
+
+.grid-item {
+    display:flex;
+    flex-direction: column;
+    gap:1.8em;
+    padding: 2.7em;
+}
+
+img {
+    height:40px;
+    width:60px; 
+}
+
+h1 {
+    color:var(--hdns-btns-bg-gray);
+    font-family: var(--ff-bigshoulders);
+    font-size:2rem
+}
+
+p {
+    color:var(--paragraphwhite);
+    font-family: var(--ff-lexenddeca);
+
+}
+
+button {
+    width:60%;
+    border-radius: 30px;
+    padding:0.8em;
+    display:flex;
+    justify-content: center;
+}
+
+.grid-item1 button {
+    background-color: var(--hdns-btns-bg-gray);
+    color:var(--brightorange);
+    border:none;
+    font-family: var(--ff-lexenddeca);
+}
+
+.grid-item2 button {
+    background-color: var(--hdns-btns-bg-gray);
+    color:var(--darkcyan);
+    border:none;
+    font-family: var(--ff-lexenddeca);
+}
+
+.grid-item3 button {
+    background-color: var(--hdns-btns-bg-gray);
+    color:var(--verydarkcyan);
+    border:none;
+    font-family: var(--ff-lexenddeca);
+}
+
+button:hover {
+    cursor:pointer;
+    border:2px solid var(--hdns-btns-bg-gray);
+    background-color:inherit;
+    color:var(--hdns-btns-bg-gray);
+
+
+}
+
+@media (min-width:800px) {
+    .grid-container {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width:900px
+    }
+
+    button {
+        margin-top:3.5em
+    }
+
+    body {
+        height:100vh
+    }
+}
